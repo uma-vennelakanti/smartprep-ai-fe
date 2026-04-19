@@ -4,10 +4,10 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 Angular frontend for SmartPrep AI.
 Features:
-Student Portal
-Admin Panel
-Analytics UI
-Profile
+Student Portal,
+Admin Panel,
+Analytics UI,
+Profile,
 Roadmap
 
 
