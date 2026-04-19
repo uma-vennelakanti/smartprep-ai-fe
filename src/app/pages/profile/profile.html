@@ -1,0 +1,67 @@
+<div class="profile-page">
+
+  <div class="profile-card">
+
+    <h1>My Profile</h1>
+
+    <p class="subtitle">
+      Manage your personal information
+    </p>
+
+    <div class="grid">
+
+      <div>
+        <label>Name</label>
+        <input title="name" [(ngModel)]="user.name"
+               [disabled]="!editMode">
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input title="email"[(ngModel)]="user.email"
+               disabled>
+      </div>
+
+      <div>
+        <label>College</label>
+        <input title="clg" [(ngModel)]="user.college"
+               [disabled]="!editMode">
+      </div>
+
+      <div>
+        <label>Branch</label>
+        <input title="branch" [(ngModel)]="user.branch"
+               [disabled]="!editMode">
+      </div>
+
+      <div>
+        <label>Graduation Year</label>
+        <input title="year" [(ngModel)]="user.graduationYear"
+               [disabled]="!editMode">
+      </div>
+
+      <div>
+        <label>Skills</label>
+        <input title="skills" [(ngModel)]="user.skills"
+               [disabled]="!editMode">
+      </div>
+
+    </div>
+
+    <div class="btn-group">
+
+      <button *ngIf="!editMode"
+              (click)="editMode=true">
+        Edit Profile
+      </button>
+
+      <button *ngIf="editMode"
+              (click)="updateProfile()">
+        Save Changes
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

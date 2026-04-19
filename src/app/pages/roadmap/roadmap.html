@@ -1,0 +1,21 @@
+<div class="container">
+
+  <h1>Smart AI Study Roadmap</h1>
+
+  <p class="subtitle">
+    Personalized interview preparation plan based on your scores.
+  </p>
+
+  <button (click)="generateRoadmap()">
+    Generate Roadmap
+  </button>
+
+  <div *ngIf="loading" class="card">
+    Generating roadmap...
+  </div>
+
+  <div *ngIf="roadmap && !loading" class="card roadmap-box">
+    <pre>{{ roadmap }}</pre>
+  </div>
+
+</div>

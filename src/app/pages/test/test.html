@@ -1,0 +1,102 @@
+<div class="test-container">
+
+  <h1>Assessment Test</h1>
+
+  <p class="subtitle">
+    Select a topic and begin your practice test
+  </p>
+
+  <!-- Start Section -->
+  <div class="start-box">
+
+    <select title="cat" [(ngModel)]="category">
+
+      <option value="">Choose Category</option>
+      <option>Java</option>
+      <option>SQL</option>
+      <option>HTML/CSS</option>
+      <option>JavaScript</option>
+      <option>Aptitude</option>
+
+    </select>
+
+    <button (click)="startTest()">
+      Start Test
+    </button>
+
+  </div>
+
+  <!-- Question Count -->
+  <div *ngIf="questions.length > 0"
+       class="question-count">
+
+    Total Questions: {{questions.length}}
+
+  </div>
+
+  <!-- Questions -->
+  <div *ngFor="let q of questions; let i = index"
+       class="question-card">
+
+    <h3>Question {{i + 1}}</h3>
+
+    <p class="question-text">
+      {{q.questionText}}
+    </p>
+
+    <label>
+      <input type="radio"
+             [name]="q.id"
+             [(ngModel)]="answers[q.id]"
+             value="A">
+      {{q.optionA}}
+    </label>
+
+    <label>
+      <input type="radio"
+             [name]="q.id"
+             [(ngModel)]="answers[q.id]"
+             value="B">
+      {{q.optionB}}
+    </label>
+
+    <label>
+      <input type="radio"
+             [name]="q.id"
+             [(ngModel)]="answers[q.id]"
+             value="C">
+      {{q.optionC}}
+    </label>
+
+    <label>
+      <input type="radio"
+             [name]="q.id"
+             [(ngModel)]="answers[q.id]"
+             value="D">
+      {{q.optionD}}
+    </label>
+
+  </div>
+
+  <!-- Submit -->
+  <button *ngIf="questions.length > 0"
+          class="submit-btn"
+          (click)="submitTest()">
+
+    Submit Test
+
+  </button>
+
+  <!-- Result -->
+  <div *ngIf="result"
+       class="result-card">
+
+    <h2>Test Result</h2>
+
+    <p>Score: {{result.score}}</p>
+
+    <p>Total Questions: {{result.totalQuestions}}</p>
+
+  </div>
+
+</div>

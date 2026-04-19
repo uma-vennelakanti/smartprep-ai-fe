@@ -1,0 +1,68 @@
+.profile-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.profile-card {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.profile-card h1 {
+  font-size: 42px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  font-size: 17px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+}
+
+input:disabled {
+  background: #f9fafb;
+}
+
+.btn-group {
+  margin-top: 28px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 15px 26px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}

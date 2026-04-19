@@ -1,0 +1,103 @@
+<div class="admin-page">
+
+  <div class="header">
+    <h1>Admin Console</h1>
+    <p>Manage SmartPrep AI Question Bank</p>
+  </div>
+
+  <!-- Add Question -->
+  <div class="card">
+
+    <h2>Add Question</h2>
+
+    <div class="grid">
+
+      <select title="form" [(ngModel)]="form.category">
+        <option value="">Select Category</option>
+        <option>Java</option>
+        <option>SQL</option>
+        <option>HTML/CSS</option>
+        <option>JavaScript</option>
+        <option>Aptitude</option>
+      </select>
+
+      <select title="form2" [(ngModel)]="form.difficulty">
+        <option value="">Select Difficulty</option>
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+      </select>
+
+      <input [(ngModel)]="form.topic"
+             placeholder="Topic">
+               <textarea [(ngModel)]="form.questionText"
+                placeholder="Question Text"
+                class="full"></textarea>
+
+     
+
+      <input [(ngModel)]="form.optionA"
+             placeholder="Option A">
+
+      <input [(ngModel)]="form.optionB"
+             placeholder="Option B">
+
+      <input [(ngModel)]="form.optionC"
+             placeholder="Option C">
+
+      <input [(ngModel)]="form.optionD"
+             placeholder="Option D">
+
+     <input [(ngModel)]="form.correctOption"
+             placeholder="Correct Option">
+
+    </div>
+
+   <button (click)="saveQuestion()">
+  {{ editMode ? 'Update Question' : 'Add Question' }}
+</button>
+
+  </div>
+
+  <!-- Table -->
+  <div class="card">
+
+    <h2>All Questions</h2>
+
+    <table>
+
+    <tr>
+  <th>ID</th>
+  <th>Category</th>
+  <th>Question</th>
+  <th>Edit</th>
+  <th>Delete</th>
+</tr>
+
+    <tr *ngFor="let q of questions">
+
+  <td>{{q.id}}</td>
+  <td>{{q.category}}</td>
+  <td>{{q.questionText}}</td>
+
+  <td>
+    <button class="edit-btn"
+            (click)="editQuestion(q)">
+      Edit
+    </button>
+  </td>
+
+  <td>
+    <button class="delete-btn"
+            (click)="deleteQuestion(q.id)">
+      Delete
+    </button>
+  </td>
+
+</tr>
+
+    </table>
+
+  </div>
+
+</div>

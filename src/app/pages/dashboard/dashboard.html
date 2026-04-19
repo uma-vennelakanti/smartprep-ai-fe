@@ -1,0 +1,43 @@
+<div class="dashboard-container">
+
+  <h1>Dashboard</h1>
+
+  <p class="subtitle">
+    Track your interview preparation progress with SmartPrep AI
+  </p>
+
+  <div *ngIf="data" class="stats-grid">
+
+    <div class="card">
+      <h3>Total Tests</h3>
+      <p>{{data.totalTests}}</p>
+    </div>
+
+    <div class="card">
+      <h3>Average Score</h3>
+      <p>{{data.averageScore}}</p>
+    </div>
+
+    <div class="card">
+      <h3>Highest Score</h3>
+      <p>{{data.highestScore}}</p>
+    </div>
+
+    <div class="card">
+      <h3>Latest Topic</h3>
+      <p>{{data.latestCategory}}</p>
+    </div>
+
+    <div class="card readiness">
+      <h3>Readiness</h3>
+      <p>{{data.readinessPercent}}%</p>
+    </div>
+
+  </div>
+
+  <div class="motivation-box">
+    Keep practicing consistently.  
+    Success is built one test at a time 🚀
+  </div>
+
+</div>

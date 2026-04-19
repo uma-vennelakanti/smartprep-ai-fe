@@ -1,0 +1,55 @@
+<nav class="navbar">
+
+  <div class="logo">
+    SmartPrep <span>AI</span>
+  </div>
+
+  <div class="nav-links">
+
+    <!-- ADMIN NAVBAR -->
+    <ng-container *ngIf="isLoggedIn && isAdmin">
+
+      <a routerLink="/admin">
+        Admin
+      </a>
+
+      <a (click)="logout()">
+        Logout
+      </a>
+
+    </ng-container>
+
+    <!-- STUDENT NAVBAR -->
+    <ng-container *ngIf="isLoggedIn && !isAdmin">
+
+      <a routerLink="/dashboard">
+        Dashboard
+      </a>
+
+      <a routerLink="/test">
+        Test
+      </a>
+
+      <a routerLink="/roadmap">
+        Roadmap
+      </a>
+
+      <a routerLink="/profile">
+        Profile
+      </a>
+
+      <a (click)="logout()">
+        Logout
+      </a>
+
+    </ng-container>
+
+    <!-- PUBLIC -->
+    <a *ngIf="!isLoggedIn"
+       routerLink="/login">
+       Login
+    </a>
+
+  </div>
+
+</nav>
